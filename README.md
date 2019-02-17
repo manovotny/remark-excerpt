@@ -1,56 +1,52 @@
-# remark-mdx-metadata
+# remark-excerpt
 
-> [Remark](https://remark.js.org/) transformer for modifying MDX metadata.
+> [Remark](https://remark.js.org/) transformer for extracting an excerpt.
 
-This is a [remark](https://remark.js.org/) plugin for externally modifying an MDX's metadata, which is useful for when you want to add or update properties like a last edited datetime or a link to edit on GitHub.
+This is a [remark](https://remark.js.org/) plugin for transformer for extracting an excerpt, like [WordPress's excerpt functionality](https://kinsta.com/knowledgebase/wordpress-excerpt/).
 
 ## Installation
 
 ### NPM
 
 ```
-$ npm i remark-mdx-metadata
+$ npm i remark-excerpt
 ```
 
 ### Yarn
 
 ```
-$ yarn add remark-mdx-metadata
+$ yarn add remark-excerpt
 ```
 
 ## Usage
 
-> This plugin requires [remark-mdx](https://github.com/mdx-js/mdx/tree/master/packages/remark-mdx) to parse mdx correctly,
-
-Say we have the following file, `example.mdx`:
+Say we have the following file, `example.md`:
 
 ```
-export const meta = {
-    existingProp: 'existing value'
-};
-
 # Title
 
-Content.
+Paragraph 1.
+
+Paragraph 2.
+
+<!-- excerpt -->
+
+Paragraph 3.
+
+Paragraph 4.
 ```
 
 And our script, `example.js`, looks as follows:
 
 ```js
-const vfile = require('to-vfile');
 const remark = require('remark');
-const mdx = require('remark-mdx');
-const mdxMetadata = require('remark-mdx-metadata');
+const excerpt = require('remark-excerpt');
+const vfile = require('to-vfile');
 
 (async () => {
-    const file = await vfile.read('example.mdx');
+    const file = await vfile.read('example.md');
     const result = await remark()
-        .use(mdx)
-        .use(mdxMetadata, {
-            meta: {
-                lastEdited: `${new Date().toISOString()}`
-            }
-        })
+        .use(excerpt)
         .process(file);
 
     console.log(result.toString());
@@ -60,37 +56,29 @@ const mdxMetadata = require('remark-mdx-metadata');
 Now, running `node example` yields:
 
 ```
-export const meta = {
-    existingProp: 'existing value',
-    lastEdited: '2018-09-02T18:58:18.000Z'
-};
-
 # Title
 
-Content.
+Paragraph 1.
+
+Paragraph 2.
 ```
 
 You can try this yourself by downloading or cloning the project, installing dependencies, and running `yarn example`.
 
 ## API
 
-### `remark().use(mdxMetadata[, options])`
+### `remark().use(excerpt[, options])`
 
-Adds or updates MDX metadata with the metadata supplied.
-
--   Adds new metadata property if it doesn't exist.
--   Updates existing metadata property if it does exist.
--   Intelligently merges new and existing metadata.
--   Will update the MDX metadata, in place, if there is existing metadata.
--   Will appropriately insert metadata if there isn't any existing metadata.
+Returns markdown content specified before the excerpt comment.
 
 #### Options
 
-##### `meta`
+##### `keyword`
 
-Type: `Object`
+Type: `String`
+Default: `excerpt`, `more`, or `preview`
 
-Specifies the metadata to add or update.
+Specifies the excerpt comment keyword to look for.
 
 ## License
 
