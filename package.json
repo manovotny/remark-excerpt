@@ -1,0 +1,49 @@
+{
+    "name": "remark-excerpt",
+    "description": "Remark transformer for extracting an excerpt.",
+    "version": "0.0.0",
+    "author": {
+        "name": "Michael Novotny",
+        "email": "manovotny@gmail.com",
+        "url": "https://manovotny.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/manovotny/remark-excerpt.git"
+    },
+    "keywords": [
+        "excerpt",
+        "markdown",
+        "preview",
+        "remark",
+        "remark-plugin"
+    ],
+    "engines": {
+        "node": ">=8.6.0",
+        "yarn": ">=1.0.0"
+    },
+    "main": "index.js",
+    "scripts": {
+        "coverage": "jest --coverage",
+        "example": "node example/example.js",
+        "lint": "eslint . --ext .json --ext .js",
+        "prettier": "prettier --write \"**/*.{js,md,mdx,yml}\"",
+        "test": "yarn lint && yarn coverage",
+        "unit": "jest"
+    },
+    "dependencies": {
+        "unist-util-visit": "1.4.0"
+    },
+    "devDependencies": {
+        "eslint": "4.19.1",
+        "eslint-config-get-off-my-lawn-prettier": "1.0.0",
+        "husky": "1.3.1",
+        "jest": "24.1.0",
+        "jest-snapshot-serializer-raw": "1.1.0",
+        "lint-staged": "8.1.3",
+        "prettier": "1.16.4",
+        "remark": "10.0.1",
+        "to-vfile": "5.0.2"
+    }
+}
