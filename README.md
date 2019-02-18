@@ -2,7 +2,7 @@
 
 > [Remark](https://remark.js.org/) transformer for extracting an excerpt.
 
-This is a [remark](https://remark.js.org/) plugin for transformer for extracting an excerpt, like [WordPress's excerpt functionality](https://kinsta.com/knowledgebase/wordpress-excerpt/).
+This is a [remark](https://remark.js.org/) plugin for transformer for extracting an excerpt, similar to [WordPress's excerpt functionality](https://kinsta.com/knowledgebase/wordpress-excerpt/).
 
 ## Installation
 
