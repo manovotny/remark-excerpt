@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should handle keyword with dashes 1`] = `
+# Title
+
+Paragraph 1.
+
+Paragraph 2.
+
+`;
+
+exports[`should handle keyword with spaces 1`] = `
+# Title
+
+Paragraph 1.
+
+Paragraph 2.
+
+`;
+
 exports[`should handle mdx 1`] = `
 import something from 'something';
 

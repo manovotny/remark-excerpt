@@ -55,6 +55,24 @@ test('should return after excerpt when multiple exist', async () => {
     expect(wrap(result)).toMatchSnapshot();
 });
 
+test('should handle keyword with dashes', async () => {
+    const options = {
+        keyword: 'custom-with--dashes'
+    };
+    const result = await processFixture('custom-with-dashes.md', options);
+
+    expect(wrap(result)).toMatchSnapshot();
+});
+
+test('should handle keyword with spaces', async () => {
+    const options = {
+        keyword: 'custom with spaces'
+    };
+    const result = await processFixture('custom-with-spaces.md', options);
+
+    expect(wrap(result)).toMatchSnapshot();
+});
+
 test('should handle no spacing in exceprt comment', async () => {
     const result = await processFixture('no-space-in-comment.md');
 
