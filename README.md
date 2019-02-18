@@ -76,7 +76,7 @@ Returns markdown content specified before the excerpt comment.
 ##### `identifier`
 
 Type: `String`
-Default: `excerpt`, `more`, or `preview`
+Default: `excerpt`, `more`, `preview`, or `teaser`
 
 Specifies the excerpt comment identifier to look for.
 

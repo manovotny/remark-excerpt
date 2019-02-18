@@ -40,6 +40,12 @@ test('should return excerpt using "preview" identifier', async () => {
     expect(wrap(result)).toMatchSnapshot();
 });
 
+test('should return excerpt using "teaser" identifier', async () => {
+    const result = await processFixture('teaser.md');
+
+    expect(wrap(result)).toMatchSnapshot();
+});
+
 test('should return excerpt using custom identifier', async () => {
     const options = {
         identifier: 'custom'

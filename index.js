@@ -6,7 +6,9 @@ const getComment = new RegExp('<!--([\\s\\S]*?)-->');
 const plugin = (options = {}) => {
     const transformer = (tree) => {
         const excerpts =
-            options.identifier && options.identifier.length ? [options.identifier] : ['excerpt', 'more', 'preview'];
+            options.identifier && options.identifier.length
+                ? [options.identifier]
+                : ['excerpt', 'more', 'preview', 'teaser'];
 
         let excerptIndex = -1;
 

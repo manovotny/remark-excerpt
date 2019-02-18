@@ -76,6 +76,15 @@ Paragraph 2.
 
 `;
 
+exports[`should return excerpt using "teaser" identifier 1`] = `
+# Title
+
+Paragraph 1.
+
+Paragraph 2.
+
+`;
+
 exports[`should return excerpt using custom identifier 1`] = `
 # Title
 
