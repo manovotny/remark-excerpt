@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should handle keyword with dashes 1`] = `
+exports[`should handle identifier with dashes 1`] = `
 # Title
 
 Paragraph 1.
@@ -9,7 +9,7 @@ Paragraph 2.
 
 `;
 
-exports[`should handle keyword with spaces 1`] = `
+exports[`should handle identifier with spaces 1`] = `
 # Title
 
 Paragraph 1.
@@ -49,7 +49,7 @@ Paragraph 1.
 
 `;
 
-exports[`should return excerpt using "exceprt" keyword 1`] = `
+exports[`should return excerpt using "exceprt" identifier 1`] = `
 # Title
 
 Paragraph 1.
@@ -58,7 +58,7 @@ Paragraph 2.
 
 `;
 
-exports[`should return excerpt using "more" keyword 1`] = `
+exports[`should return excerpt using "more" identifier 1`] = `
 # Title
 
 Paragraph 1.
@@ -67,7 +67,7 @@ Paragraph 2.
 
 `;
 
-exports[`should return excerpt using "preview" keyword 1`] = `
+exports[`should return excerpt using "preview" identifier 1`] = `
 # Title
 
 Paragraph 1.
@@ -76,7 +76,7 @@ Paragraph 2.
 
 `;
 
-exports[`should return excerpt using custom keyword 1`] = `
+exports[`should return excerpt using custom identifier 1`] = `
 # Title
 
 Paragraph 1.

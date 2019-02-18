@@ -73,12 +73,12 @@ Returns markdown content specified before the excerpt comment.
 
 #### Options
 
-##### `keyword`
+##### `identifier`
 
 Type: `String`
 Default: `excerpt`, `more`, or `preview`
 
-Specifies the excerpt comment keyword to look for.
+Specifies the excerpt comment identifier to look for.
 
 ## License
 

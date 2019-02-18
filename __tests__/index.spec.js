@@ -22,27 +22,27 @@ test('should return unmodified document when no excerpt exists', async () => {
     expect(wrap(result)).toMatchSnapshot();
 });
 
-test('should return excerpt using "exceprt" keyword', async () => {
+test('should return excerpt using "exceprt" identifier', async () => {
     const result = await processFixture('excerpt.md');
 
     expect(wrap(result)).toMatchSnapshot();
 });
 
-test('should return excerpt using "more" keyword', async () => {
+test('should return excerpt using "more" identifier', async () => {
     const result = await processFixture('more.md');
 
     expect(wrap(result)).toMatchSnapshot();
 });
 
-test('should return excerpt using "preview" keyword', async () => {
+test('should return excerpt using "preview" identifier', async () => {
     const result = await processFixture('preview.md');
 
     expect(wrap(result)).toMatchSnapshot();
 });
 
-test('should return excerpt using custom keyword', async () => {
+test('should return excerpt using custom identifier', async () => {
     const options = {
-        keyword: 'custom'
+        identifier: 'custom'
     };
     const result = await processFixture('custom.md', options);
 
@@ -55,18 +55,18 @@ test('should return after excerpt when multiple exist', async () => {
     expect(wrap(result)).toMatchSnapshot();
 });
 
-test('should handle keyword with dashes', async () => {
+test('should handle identifier with dashes', async () => {
     const options = {
-        keyword: 'custom-with--dashes'
+        identifier: 'custom-with--dashes'
     };
     const result = await processFixture('custom-with-dashes.md', options);
 
     expect(wrap(result)).toMatchSnapshot();
 });
 
-test('should handle keyword with spaces', async () => {
+test('should handle identifier with spaces', async () => {
     const options = {
-        keyword: 'custom with spaces'
+        identifier: 'custom with spaces'
     };
     const result = await processFixture('custom-with-spaces.md', options);
 
