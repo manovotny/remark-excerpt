@@ -1,7 +1,7 @@
 {
     "name": "remark-excerpt",
     "description": "Remark transformer for extracting an excerpt.",
-    "version": "0.0.0",
+    "version": "1.0.0-beta.1",
     "author": {
         "name": "Michael Novotny",
         "email": "manovotny@gmail.com",
