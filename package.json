@@ -30,22 +30,31 @@
         "coverage": "jest --coverage",
         "example": "node example/example.js",
         "lint": "eslint . --ext .json --ext .js",
-        "prettier": "prettier --write \"**/*.{js,md,mdx,yml}\"",
-        "test": "npm run lint && npm run coverage",
+        "lint-staged": "lint-staged",
+        "prettier": "prettier --write --ignore-unknown .",
+        "prettier:check": "prettier --check --ignore-unknown .",
+        "test": "npm run lint && npm run prettier:check && npm run coverage",
         "unit": "jest"
+    },
+    "git": {
+        "pre-commit": "lint-staged"
+    },
+    "lint-staged": {
+        "*": "prettier --write --ignore-unknown"
     },
     "dependencies": {
         "unist-util-visit": "1.4.0"
     },
     "devDependencies": {
+        "@vercel/git-hooks": "1.0.0",
         "eslint": "4.19.1",
         "eslint-config-get-off-my-lawn-prettier": "1.0.0",
-        "husky": "1.3.1",
         "jest": "24.1.0",
         "jest-snapshot-serializer-raw": "1.1.0",
-        "lint-staged": "8.1.3",
+        "lint-staged": "13.0.3",
         "npm-check": "6.0.1",
-        "prettier": "1.16.4",
+        "prettier": "2.7.1",
+        "prettier-config-get-off-my-lawn": "1.0.0",
         "remark": "10.0.1",
         "to-vfile": "5.0.2"
     }
