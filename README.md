@@ -45,9 +45,7 @@ const vfile = require('to-vfile');
 
 (async () => {
     const file = await vfile.read('example.md');
-    const result = await remark()
-        .use(excerpt)
-        .process(file);
+    const result = await remark().use(excerpt).process(file);
 
     console.log(result.toString());
 })();

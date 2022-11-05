@@ -22,7 +22,7 @@ exports[`should handle mdx 1`] = `
 import something from 'something';
 
 export const meta = {
-    prop: 'value'
+    prop: 'value',
 };
 
 # Title
