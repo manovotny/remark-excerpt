@@ -1,7 +1,9 @@
 const visit = require('unist-util-visit');
 
-const isComment = new RegExp('<!--(.*?)-->');
-const getComment = new RegExp('<!--([\\s\\S]*?)-->');
+/* eslint-disable prefer-regex-literals */
+const isComment = new RegExp('<!--(.*?)-->', 'u');
+const getComment = new RegExp('<!--([\\s\\S]*?)-->', 'u');
+/* eslint-enable */
 
 const plugin = (options = {}) => {
     const transformer = (tree) => {
