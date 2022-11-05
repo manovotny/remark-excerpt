@@ -9,9 +9,7 @@ const plugin = require('../index');
 const processFixture = async (name, options) => {
     const path = join(__dirname, 'fixtures', name);
     const file = await vfile.read(path);
-    const result = await remark()
-        .use(plugin, options)
-        .process(file);
+    const result = await remark().use(plugin, options).process(file);
 
     return result.toString();
 };
@@ -48,7 +46,7 @@ test('should return excerpt using "teaser" identifier', async () => {
 
 test('should return excerpt using custom identifier', async () => {
     const options = {
-        identifier: 'custom'
+        identifier: 'custom',
     };
     const result = await processFixture('custom.md', options);
 
@@ -63,7 +61,7 @@ test('should return after excerpt when multiple exist', async () => {
 
 test('should handle identifier with dashes', async () => {
     const options = {
-        identifier: 'custom-with--dashes'
+        identifier: 'custom-with--dashes',
     };
     const result = await processFixture('custom-with-dashes.md', options);
 
@@ -72,7 +70,7 @@ test('should handle identifier with dashes', async () => {
 
 test('should handle identifier with spaces', async () => {
     const options = {
-        identifier: 'custom with spaces'
+        identifier: 'custom with spaces',
     };
     const result = await processFixture('custom-with-spaces.md', options);
 
