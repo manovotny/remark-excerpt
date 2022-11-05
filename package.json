@@ -22,16 +22,16 @@
         "teaser"
     ],
     "engines": {
-        "node": ">=8.6.0",
-        "yarn": ">=1.0.0"
+        "node": ">=16.0.0"
     },
     "main": "index.js",
     "scripts": {
+        "check": "npm-check -u",
         "coverage": "jest --coverage",
         "example": "node example/example.js",
         "lint": "eslint . --ext .json --ext .js",
         "prettier": "prettier --write \"**/*.{js,md,mdx,yml}\"",
-        "test": "yarn lint && yarn coverage",
+        "test": "npm run lint && npm run coverage",
         "unit": "jest"
     },
     "dependencies": {
@@ -44,6 +44,7 @@
         "jest": "24.1.0",
         "jest-snapshot-serializer-raw": "1.1.0",
         "lint-staged": "8.1.3",
+        "npm-check": "6.0.1",
         "prettier": "1.16.4",
         "remark": "10.0.1",
         "to-vfile": "5.0.2"
