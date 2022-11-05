@@ -1,10 +1,10 @@
-const {join} = require('path');
+const {join} = require('node:path');
 
 const {wrap} = require('jest-snapshot-serializer-raw');
 const remark = require('remark');
 const vfile = require('to-vfile');
 
-const plugin = require('../index');
+const plugin = require('..');
 
 const processFixture = async (name, options) => {
     const path = join(__dirname, 'fixtures', name);

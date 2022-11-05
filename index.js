@@ -1,7 +1,7 @@
 const visit = require('unist-util-visit');
 
-const isComment = new RegExp('<!--(.*?)-->');
-const getComment = new RegExp('<!--([\\s\\S]*?)-->');
+const isComment = /<!--(.*?)-->/u;
+const getComment = /<!--([\s\S]*?)-->/u;
 
 const plugin = (options = {}) => {
     const transformer = (tree) => {
