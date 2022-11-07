@@ -33,7 +33,7 @@ Paragraph 2.
 
 `;
 
-exports[`should handle no spacing in exceprt comment 1`] = `
+exports[`should handle no spacing in excerpt comment 1`] = `
 # Title
 
 Paragraph 1.
@@ -49,7 +49,7 @@ Paragraph 1.
 
 `;
 
-exports[`should return excerpt using "exceprt" identifier 1`] = `
+exports[`should return excerpt using "excerpt" identifier 1`] = `
 # Title
 
 Paragraph 1.
