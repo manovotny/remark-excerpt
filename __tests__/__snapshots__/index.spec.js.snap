@@ -94,6 +94,21 @@ Paragraph 2.
 
 `;
 
+exports[`should return unmodified document when comment exists 1`] = `
+# Title
+
+Paragraph 1.
+
+Paragraph 2.
+
+<!-- comment -->
+
+Paragraph 3.
+
+Paragraph 4.
+
+`;
+
 exports[`should return unmodified document when no excerpt exists 1`] = `
 # Title
 

@@ -18,6 +18,12 @@ const processFixture = async (name, options) => {
     return result.toString();
 };
 
+test('should return unmodified document when comment exists', async () => {
+    const result = await processFixture('comment.md');
+
+    expect(wrap(result)).toMatchSnapshot();
+});
+
 test('should return unmodified document when no excerpt exists', async () => {
     const result = await processFixture('no-excerpt.md');
 
