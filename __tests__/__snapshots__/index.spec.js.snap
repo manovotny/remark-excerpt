@@ -22,7 +22,7 @@ exports[`should handle mdx 1`] = `
 import something from 'something';
 
 export const meta = {
-    prop: 'value',
+prop: 'value',
 };
 
 # Title
@@ -33,7 +33,7 @@ Paragraph 2.
 
 `;
 
-exports[`should handle no spacing in exceprt comment 1`] = `
+exports[`should handle no spacing in excerpt comment 1`] = `
 # Title
 
 Paragraph 1.
@@ -49,7 +49,7 @@ Paragraph 1.
 
 `;
 
-exports[`should return excerpt using "exceprt" identifier 1`] = `
+exports[`should return excerpt using "excerpt" identifier 1`] = `
 # Title
 
 Paragraph 1.
@@ -91,6 +91,21 @@ exports[`should return excerpt using custom identifier 1`] = `
 Paragraph 1.
 
 Paragraph 2.
+
+`;
+
+exports[`should return unmodified document when comment exists 1`] = `
+# Title
+
+Paragraph 1.
+
+Paragraph 2.
+
+<!-- comment -->
+
+Paragraph 3.
+
+Paragraph 4.
 
 `;
 

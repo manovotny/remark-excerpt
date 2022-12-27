@@ -1,12 +1,10 @@
-const remark = require('remark');
-const vfile = require('to-vfile');
+import {remark} from 'remark';
+import {toVFile} from 'to-vfile';
 
-const plugin = require('..');
+import plugin from '../index.js';
 
-(async () => {
-    const file = await vfile.read('./example/example.md');
-    const result = await remark().use(plugin).process(file);
+const file = await toVFile.read('./example/example.md');
+const result = await remark().use(plugin).process(file);
 
-    // eslint-disable-next-line no-console
-    console.log(result.toString());
-})();
+// eslint-disable-next-line no-console
+console.log(result.toString());

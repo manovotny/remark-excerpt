@@ -39,16 +39,14 @@ Paragraph 4.
 And our script, `example.js`, looks as follows:
 
 ```js
-const remark = require('remark');
-const excerpt = require('remark-excerpt');
-const vfile = require('to-vfile');
+import {remark} from 'remark';
+import excerpt from 'remark-excerpt';
+import {toVFile} from 'to-vfile';
 
-(async () => {
-    const file = await vfile.read('example.md');
-    const result = await remark().use(excerpt).process(file);
+const file = await toVFile.read('example.md');
+const result = await remark().use(plugin).process(file);
 
-    console.log(result.toString());
-})();
+console.log(result.toString());
 ```
 
 Now, running `node example` yields:

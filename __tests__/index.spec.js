@@ -1,18 +1,28 @@
-const {join} = require('node:path');
+import {dirname, join} from 'node:path';
+import {fileURLToPath} from 'node:url';
 
-const {wrap} = require('jest-snapshot-serializer-raw');
-const remark = require('remark');
-const vfile = require('to-vfile');
+import {wrap} from 'jest-snapshot-serializer-raw';
+import {remark} from 'remark';
+import {toVFile} from 'to-vfile';
 
-const plugin = require('..');
+import plugin from '..';
 
 const processFixture = async (name, options) => {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = dirname(__filename);
     const path = join(__dirname, 'fixtures', name);
-    const file = await vfile.read(path);
+    const file = await toVFile.read(path);
+
     const result = await remark().use(plugin, options).process(file);
 
     return result.toString();
 };
+
+test('should return unmodified document when comment exists', async () => {
+    const result = await processFixture('comment.md');
+
+    expect(wrap(result)).toMatchSnapshot();
+});
 
 test('should return unmodified document when no excerpt exists', async () => {
     const result = await processFixture('no-excerpt.md');
@@ -20,7 +30,7 @@ test('should return unmodified document when no excerpt exists', async () => {
     expect(wrap(result)).toMatchSnapshot();
 });
 
-test('should return excerpt using "exceprt" identifier', async () => {
+test('should return excerpt using "excerpt" identifier', async () => {
     const result = await processFixture('excerpt.md');
 
     expect(wrap(result)).toMatchSnapshot();
@@ -77,7 +87,7 @@ test('should handle identifier with spaces', async () => {
     expect(wrap(result)).toMatchSnapshot();
 });
 
-test('should handle no spacing in exceprt comment', async () => {
+test('should handle no spacing in excerpt comment', async () => {
     const result = await processFixture('no-space-in-comment.md');
 
     expect(wrap(result)).toMatchSnapshot();
